@@ -1,0 +1,266 @@
+\documentclass[12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fullpage}
+
+\begin{document}
+
+\section*{Задача №1}
+Пусть $X \sim \text{Bin}(3, 1/2)$ — число красных шаров в I коробке, $W_1$ — число белых шаров в I коробке, $Y$ — число шаров во II коробке.
+
+1. Так как $W_1 = 5 - X - Y$ и $X, W_1$ независимы:
+\[
+P(X=x, Y=y) = P(X=x, W_1 = 5-x-y) = \binom{3}{x}\left(\frac{1}{2}\right)^3 \cdot \binom{2}{5-x-y}\left(\frac{1}{2}\right)^2 = \frac{1}{32} \binom{3}{x} \binom{2}{5-x-y}
+\]
+
+2. Вычисление условных вероятностей при $Y=3$:
+\[
+P(Y=3) = \frac{10}{32}
+\]
+\[
+P(X=0 \mid Y=3) = \frac{1/32}{10/32} = 0.1, \quad P(X=1 \mid Y=3) = \frac{6/32}{10/32} = 0.6
+\]
+\[
+P(X=2 \mid Y=3) = \frac{3/32}{10/32} = 0.3, \quad P(X=3 \mid Y=3) = 0
+\]
+\[
+E(X \mid Y=3) = 0 \cdot 0.1 + 1 \cdot 0.6 + 2 \cdot 0.3 + 3 \cdot 0 = 1.2
+\]
+
+3. В общем случае $X \mid Y \sim \text{Hypergeom}(5, 3, 5-Y)$:
+\[
+E(X \mid Y) = (5-Y)\frac{3}{5} = 3 - 0.6Y
+\]
+
+\bigskip
+\section*{Задача №2}
+Пусть $\xi$ — случайная величина, $F(\xi) = \sin \xi$. Проверим измеримость $F$ относительно $\sigma(\text{tg}\,\xi)$.
+
+Так как $\sigma(\text{tg}\,\xi) = \{ (\text{tg}\,\xi)^{-1}(S) : S \in \mathcal{B}(\mathbb{R}) \}$, то прообраз любого борелевского множества $S$ имеет вид:
+\[
+(\text{tg}\,\xi)^{-1}(S) = \left\{ (a + \pi n, b + \pi n) : a < b, a,b \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right), n \in \mathbb{Z} \right\}
+\]
+Для $F(\xi) = \sin \xi$ прообраз интервала не является $\pi$-периодическим множеством. Следовательно, $F$ не измерима относительно $\sigma(\text{tg}\,\xi)$, и найти $E(\sin \xi \mid \text{tg}\,\xi)$ нельзя.
+
+\bigskip
+\section*{Задача №3}
+Пусть $\xi$ и $\eta$ одинаково распределены и независимы.
+
+В силу симметрии условные математические ожидания совпадают:
+\[
+E(\xi \mid \xi + \eta) = E(\eta \mid \xi + \eta) = X
+\]
+По свойствам условного математического ожидания:
+\[
+E(\xi \mid \xi + \eta) + E(\eta \mid \xi + \eta) = E(\xi + \eta \mid \xi + \eta) = \xi + \eta
+\]
+Отсюда $X + X = \xi + \eta \implies X = \frac{\xi + \eta}{2}$. Таким образом:
+\[
+E(\xi \mid \xi + \eta) = \frac{\xi + \eta}{2}
+\]
+
+\bigskip
+\section*{Задача №4}
+Пусть $\mathcal{F} = \sigma(\{S_i\}_{i=n}^\infty)$. Найти $E(\xi_1 \mid \mathcal{F})$.
+
+В силу симметрии независимых одинаково распределенных величин $E(\xi_k \mid \mathcal{F})$ одинаковы для всех $k \le n$:
+\[
+\sum_{k=1}^n E(\xi_k \mid \mathcal{F}) = E\left(\sum_{k=1}^n \xi_k \mid \mathcal{F}\right) = E(S_n \mid \mathcal{F}) = S_n
+\]
+Так как все $n$ слагаемых равны:
+\[
+n \cdot E(\xi_1 \mid \mathcal{F}) = S_n \implies E(\xi_1 \mid \mathcal{F}) = \frac{S_n}{n}
+\]
+
+\bigskip
+\section*{Задача №5}
+Пусть $(\xi, \eta) \stackrel{d}{=} (\zeta, \eta)$. Доказать, что $E(F(\xi) \mid \eta) \stackrel{\text{п.н.}}{=} E(F(\zeta) \mid \eta)$.
+
+Для любой функции $G(u,v) = F(u) \cdot \mathbb{I}_{\{v \in B\}}$ имеем $E G(\xi, \eta) = E G(\zeta, \eta)$.
+Для любого $A \in \sigma(\eta)$:
+\[
+E(F(\xi) \mathbb{I}_A) = E(E(F(\xi) \mid \eta) \mathbb{I}_A)
+\]
+\[
+E(F(\zeta) \mathbb{I}_A) = E(E(F(\zeta) \mid \eta) \mathbb{I}_A)
+\]
+Так как совпадение интегралов выполняется для всех $A \in \sigma(\eta)$, по определению условного математического ожидания:
+\[
+E(F(\xi) \mid \eta) \stackrel{\text{п.н.}}{=} E(F(\zeta) \mid \eta)
+\]
+
+\bigskip
+\section*{Задача №6}
+Пусть $S_n \sim \text{Pois}(n\lambda)$ — пуассоновский процесс.
+
+\subsection*{1) Случай $n \le m$:}
+а) Условное распределение $P(S_n = k \mid S_m = l)$ является биномиальным $\text{Bin}\left(l, \frac{n}{m}\right)$:
+\[
+P(S_n = k \mid S_m = l) = \binom{l}{k} \left(\frac{n}{m}\right)^k \left(1 - \frac{n}{m}\right)^{l-k}
+\]
+б) $E(S_n \mid S_m) = \sum_{i=1}^n E(\xi_i \mid S_m) = \frac{n}{m} S_m$.
+
+\subsection*{2) Случай $n > m$:}
+а) По приращениям процесса:
+\[
+P(S_n = k \mid S_m = l) = P(S_n - S_m = k - l) = \frac{((n-m)\lambda)^{k-l} e^{-(n-m)\lambda}}{(k-l)!}
+\]
+б) $E(S_n \mid S_m) = S_m + E(S_n - S_m) = S_m + (n-m)\lambda$.
+
+\bigskip
+\section*{Задача №7}
+Пусть $\xi \ge 0, \eta \ge 0$ независимы и распределены экспоненциально с параметром $\lambda$: $p_{\xi,\eta}(u,v) = \lambda e^{-\lambda u} \cdot \lambda e^{-\lambda v}$.
+
+а) Переход к переменным $U = \xi$, $V = \xi + \eta$. Совместная плотность при $0 \le u \le v$:
+\[
+p_{\xi, \xi+\eta}(u,v) = \lambda^2 e^{-\lambda v}
+\]
+
+б) Плотность суммы $V = \xi + \eta$:
+\[
+p_{\xi+\eta}(v) = \int_0^v \lambda^2 e^{-\lambda v} \, du = \lambda^2 v e^{-\lambda v}
+\]
+Условная плотность: $p_{\xi \mid \xi+\eta}(u \mid v) = \frac{1}{v}$, то есть $\xi \mid (\xi+\eta=x) \sim U[0, x]$.
+
+в) Функция распределения $P(\xi \le a \mid \xi+\eta = x) = \frac{a}{x}$ при $0 \le a \le x$.
+
+г) $E(\xi \mid \xi+\eta = x) = \frac{x}{2} \implies E(\xi \mid \xi+\eta) = \frac{\xi+\eta}{2}$.
+
+\bigskip
+\section*{Задача №8}
+
+Найдем условное математическое ожидание $E(\sin(XY) \mid Y)$.
+
+Известно, что $E(g(X,Y) \mid Y=y) = \int_{-\infty}^{+\infty} g(x,y) f_{X \mid Y}(x \mid y) \, dx$.
+При фиксированном $Y=y$ величина $X \sim U(0, y)$ имеет плотность $f(x) = \frac{1}{y} \mathbb{I}_{\{0 \le x \le y\}}$.
+
+1. Вычисляем интеграл при $Y=y$:
+\[
+E(\sin(XY) \mid Y=y) = \int_{0}^{y} \sin(xy) \cdot \frac{1}{y} \, dx 
+= \frac{1}{y} \left[ -\frac{\cos(xy)}{y} \right]_{0}^{y} 
+= \frac{1 - \cos(y^2)}{y^2}
+\]
+
+2. Переходим к условному математическому ожиданию как к случайной величине:
+\[
+E(\sin(XY) \mid Y) = \frac{1 - \cos(Y^2)}{Y^2}
+\]
+
+\bigskip
+\section*{Задача №9}
+
+Пусть $(\xi, \eta) \sim \mathcal{N}$. Известно:
+\[
+\rho = \frac{\text{Cov}(\xi, \eta)}{\sigma_\xi \cdot \sigma_\eta} = \frac{1}{4}
+\]
+Условное распределение $\xi \mid (\eta = y) \sim \mathcal{N}(\mu_{\xi \mid \eta}(y), \sigma_{\xi \mid \eta}^2)$:
+\[
+\sigma_{\xi \mid \eta}^2 = \sigma_\xi^2 (1 - \rho^2) = \frac{15}{4} \implies \sigma_{\xi \mid \eta} = \frac{\sqrt{15}}{2}
+\]
+\[
+\mu_{\xi \mid \eta}(y) = \mu_\xi + \rho \cdot \frac{\sigma_\xi}{\sigma_\eta} (y - \mu_\eta) = \frac{y}{4}
+\]
+
+Условная плотность:
+\[
+f_{\xi \mid \eta}(x \mid y) = \frac{1}{\sqrt{\frac{15\pi}{2}}} \exp\left( -\frac{2 (x - y/4)^2}{15} \right)
+\]
+
+Условное математическое ожидание:
+\[
+E(\xi \mid \eta) = \frac{\eta}{4} \implies E(\xi \mid \eta = 2) = \frac{1}{2}
+\]
+
+Условная вероятность:
+\[
+P(1 < \xi < 2 \mid \eta) = \Phi_0\left( \frac{8 - \eta}{\sqrt{15}} \right) - \Phi_0\left( \frac{4 - \eta}{\sqrt{15}} \right)
+\]
+При $\eta = 1$:
+\[
+P(1 < \xi < 2 \mid \eta = 1) = \Phi_0\left( \frac{8 - 1}{2\sqrt{15}} \right) - \Phi_0\left( \frac{4 - 1}{2\sqrt{15}} \right) \approx 0.1662
+\]
+
+\bigskip
+\section*{Задача №11}
+
+Докажем, что если $\sigma$-алгебра $\mathcal{B}$ независима с $\sigma(\xi, \mathcal{A})$, то $E(\xi \mid \sigma(\mathcal{A}, \mathcal{B})) \stackrel{\text{п.н.}}{=} E(\xi \mid \mathcal{A})$.
+
+\subsection*{1. Доказательство леммы Дынкина}
+Возьмем $A \in \mathcal{P}$. 
+1. $\forall B \in \mathcal{P} : A \cap B \in \mathcal{P} \subseteq \lambda(\mathcal{P}) \implies \mathcal{P} \subseteq \mathcal{L}_A$. Так как $\mathcal{P} \subseteq \lambda(\mathcal{P})$ и $\mathcal{P} \subseteq \mathcal{L}_A$, а $\mathcal{L}_A$ — $\lambda$-система, то $\lambda(\mathcal{P}) \subseteq \mathcal{L}_A$.
+2. $\forall B \in \lambda(\mathcal{P}) \implies B \in \mathcal{L}_A \implies \forall A \in \mathcal{P} \text{ и } \forall B \in \lambda(\mathcal{P}) \implies A \cap B \in \lambda(\mathcal{P})$.
+3. Для любого $B \in \lambda(\mathcal{P})$ зададим $\mathcal{L}_B = \{ A \in \Omega \mid A \cap B \in \lambda(\mathcal{P}) \}$.
+4. Из пункта (2) следует, что $\forall A \in \mathcal{P} : A \in \mathcal{L}_B \implies \mathcal{P} \subseteq \mathcal{L}_B \implies \lambda(\mathcal{P}) \subseteq \mathcal{L}_B$.
+5. В итоге $\forall A' \in \lambda(\mathcal{P}) \implies A' \in \mathcal{L}_B \implies A' \cap B \in \lambda(\mathcal{P})$. Лемма Дынкина доказана.
+
+\subsection*{2. Основное доказательство}
+Пусть $\mathcal{P} = \{ A' \cap B' \mid A' \in \mathcal{A}, B' \in \mathcal{B} \}$, тогда $\sigma(\mathcal{A}, \mathcal{B}) = \sigma(\mathcal{P})$.
+
+Зададим класс:
+\[
+\mathcal{L} = \{ C \in \mathcal{F} \mid E(\xi \cdot \mathbb{I}_C) = E(E(\xi \mid \mathcal{A}) \cdot \mathbb{I}_C) \}
+\]
+
+Проверим, что $\mathcal{P} \subseteq \mathcal{L}$. Пусть $\eta = E(\xi \mid \mathcal{A})$. В силу независимости $\sigma(\xi, \mathcal{A})$ с $\mathcal{B}$:
+\[
+E(\xi \cdot \mathbb{I}_{A' \cap B'}) = E(\xi \cdot \mathbb{I}_{A'}) \cdot P(B')
+\]
+\[
+E(\eta \cdot \mathbb{I}_{A' \cap B'}) = E(\eta \cdot \mathbb{I}_{A'}) \cdot E(\mathbb{I}_{B'})
+\]
+Так как $E(\xi \cdot \mathbb{I}_{A'}) = E(E(\xi \mid \mathcal{A}) \mathbb{I}_{A'}) = E(\eta \cdot \mathbb{I}_{A'})$, то:
+\[
+E(\xi \cdot \mathbb{I}_{A' \cap B'}) = E(\eta \cdot \mathbb{I}_{A' \cap B'}) = E(E(\xi \mid \mathcal{A}) \mathbb{I}_{A' \cap B'}) \implies \mathcal{P} \subseteq \mathcal{L}
+\]
+
+Проверим, что $\mathcal{L}$ — $\lambda$-система:
+\begin{itemize}
+    \item[а)] $\Omega \in \mathcal{L}$, так как $E(\xi) = E(E(\xi \mid \mathcal{A}))$.
+    \item[б)] Если $C \in \mathcal{L}$, то $E(\xi \cdot \mathbb{I}_{C^c}) = E(\xi (1 - \mathbb{I}_C)) = E\xi - E(\xi \cdot \mathbb{I}_C)$, а $E(E(\xi \mid \mathcal{A}) \cdot \mathbb{I}_{C^c}) = E(E(\xi \mid \mathcal{A})) - E(E(\xi \mid \mathcal{A}) \mathbb{I}_C) \implies C^c \in \mathcal{L}$.
+    \item[в)] Для попарно непересекающихся $C_n$: $\mathbb{I}_C = \sum_{n=1}^\infty \mathbb{I}_{C_n}$. В силу линейности и теоремы о монотонной сходимости:
+    \[
+    E(\xi \cdot \mathbb{I}_C) = \sum_{n=1}^\infty E(\xi \cdot \mathbb{I}_{C_n}) = \sum_{n=1}^\infty E(E(\xi \mid \mathcal{A}) \mathbb{I}_{C_n})
+    \]
+    следовательно, $\mathcal{L}$ — $\lambda$-система.
+\end{itemize}
+
+По лемме Дынкина $\sigma(\mathcal{P}) \subseteq \mathcal{L} \implies \sigma(\mathcal{A}, \mathcal{B}) \subseteq \mathcal{L} \implies E(\xi \mid \sigma(\mathcal{A}, \mathcal{B})) \stackrel{\text{п.н.}}{=} E(\xi \mid \mathcal{A})$.
+
+\bigskip
+\section*{Задача №12}
+
+\subsection*{а) Контрпример}
+Покажем, что из $E(\xi \mid \mathcal{A}) \stackrel{\text{п.н.}}{=} E(\xi \mid \mathcal{B})$ для любой величины $\xi$ не следует равенство $\sigma$-алгебр $\mathcal{A} = \mathcal{B}$.
+
+Зададим вероятностное пространство:
+\[
+\Omega = \{1, 2\}, \quad \mathcal{F} = 2^\Omega, \quad P(\{1\}) = 1, \quad P(\{2\}) = 0
+\]
+Выберем $\sigma$-алгебры:
+\[
+\mathcal{A} = \{\emptyset, \Omega\}, \quad \mathcal{B} = \{\emptyset, \{1\}, \{2\}, \Omega\} \quad (\mathcal{A} \neq \mathcal{B})
+\]
+Для любой случайной величины $\xi$:
+\[
+E(\xi \mid \mathcal{A}) = E(\xi), \quad E(\xi \mid \mathcal{B}) = \xi
+\]
+Так как $P(\{2\}) = 0$, то $\xi(1) = E(\xi)$, а значит $\xi \stackrel{\text{п.н.}}{=} E(\xi)$. Следовательно:
+\[
+E(\xi \mid \mathcal{A}) \stackrel{\text{п.н.}}{=} E(\xi \mid \mathcal{B})
+\]
+хотя $\mathcal{A} \neq \mathcal{B}$.
+
+\subsection*{б) Совпадение $\sigma$-алгебр с точностью до нулевой меры}
+Пусть для любого $A' \in \mathcal{A}$ выполняется $E(\mathbb{I}_{A'} \mid \mathcal{A}) \stackrel{\text{п.н.}}{=} E(\mathbb{I}_{A'} \mid \mathcal{B})$.
+
+Так как $E(\mathbb{I}_{A'} \mid \mathcal{A}) = \mathbb{I}_{A'}$, то $\mathbb{I}_{A'} \stackrel{\text{п.н.}}{=} E(\mathbb{I}_{A'} \mid \mathcal{B})$.
+
+Обозначим $\eta = E(\mathbb{I}_{A'} \mid \mathcal{B})$, которая $\mathcal{B}$-измерима. 
+Множество $B' = \{\omega \in \Omega \mid \eta(\omega) = 1\} \in \mathcal{B}$.
+
+Поскольку $\mathbb{I}_{A'} \stackrel{\text{п.н.}}{=} \eta \implies \eta(\omega) = 1$, когда $\omega \in A' \implies \mathbb{I}_{B'} \stackrel{\text{п.н.}}{=} \mathbb{I}_{A'}$.
+Отсюда $A' \in \mathcal{B}_P \implies \mathcal{A} \subseteq \mathcal{B}_P \implies \mathcal{B} \le \mathcal{A}_P$.
+
+\end{document}
