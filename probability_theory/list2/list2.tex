@@ -1,0 +1,102 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage[margin=2cm]{geometry}
+\usepackage{parskip}
+
+% Обозначение для мощности / количества элементов (вертикальные черты)
+\newcommand{\card}[1]{\left| #1 \right|}
+
+\begin{document}
+
+% ==================== РАЗДЕЛ 1 ====================
+\section*{Теория мер и полуколец}
+
+$R$ --- полукольцо на $X \iff$ 
+\begin{enumerate}
+    \item $\varnothing \in R$
+    \item $A, B \in R \implies A \cap B \in R$
+    \item $A, B \in R \implies A \setminus B = \bigsqcup\limits_{i=1}^n C_i, \text{ где } C_i \in R$
+\end{enumerate}
+
+\subsection*{Теорема Каратеодори}
+$X$ --- множество, $R$ --- полукольцо на $X$; если $\mu_0$ --- $\sigma$-аддитивная мера на $R$, то $\exists \mu$ --- $\sigma$-аддитивная мера на $\sigma(R)$, где $\mu(R') = \mu_0(R')$ при $R' \subseteq R$.
+
+\subsection*{Теорема о единственности продолжения}
+$\mu_1, \mu_2$ --- $\sigma$-аддитивные меры на $\sigma(S)$, где $S$ --- $\pi$-система. \\
+Если:
+\begin{enumerate}
+    \item $\mu_1(A) = \mu_2(A)$, где $A \in S$
+    \item $\exists X = \bigcup\limits_{i=1}^\infty C_i$, где $C_i \in S$ и $\mu_1(C_i) = \mu_2(C_i) < +\infty$
+\end{enumerate}
+Тогда $\mu_1 \equiv \mu_2$ на $\sigma(S)$.
+
+\bigskip
+\hrule
+\bigskip
+
+% ==================== ЗАДАЧА 1 ====================
+\section*{Задача 1}
+
+Пусть $F = \{ [0, 1] \} \cup \{ \{x\} \mid x \in [0, 1] \}$
+
+$\sigma(F) = \{ A \subseteq [0, 1] \mid A \text{ счетно или косчетно} \}$
+
+Пусть
+\[
+\mu_1 = 
+\begin{cases}
+\card{A}, & \text{если } A \text{ конечно} \\
++\infty, & \text{иначе}
+\end{cases}
+\quad \text{— } \sigma\text{-адд на } \sigma(F)
+\]
+
+\[
+\mu_2 = 
+\begin{cases}
+\card{A}, & \text{если } A \text{ конечно или счетно} \\
++\infty, & \text{если } [0, 1] \setminus A \text{ конечно или счетно}
+\end{cases}
+\quad \text{— } \sigma\text{-адд на } \sigma(F)
+\]
+
+\begin{enumerate}
+    \item $x \in F \setminus [0, 1] : \mu_1(x) = 1 = \mu_2(x)$ \\
+    $x = [0, 1] : \mu_1(x) = +\infty = \mu_2(x)$
+    
+    \item $x \in \sigma(F) \text{ и } x\text{-счетно} \implies \mu_1(x) = +\infty \text{ и } \mu_2(x) = \aleph_0$
+\end{enumerate}
+
+\bigskip
+\hrule
+\bigskip
+
+% ==================== ЗАДАЧА 2 ====================
+\section*{Задача 2}
+
+(!): $A, B \subseteq \mathbb{N} : C = A \cap B : \not\exists \lim\limits_{N \to +\infty} \frac{\card{C \cap [1, N]}}{N}$
+
+Разобьём $\mathbb{N}$ на $I_k = [2^{k-1}; 2^k)$
+
+Выберем $A, B \subseteq \mathbb{N}$ так:
+\begin{enumerate}
+    \item $k \vdots 2 : A \cap I_k = I_k, \; B \cap I_k = (\text{четные в } I_k) \implies A \cap B \cap I_k = B \cap I_k$
+    \item $k \not\vdots 2 : A \cap I_k = (\text{нечет в } I_k), \; B \cap I_k = (\text{чет в } I_k), \; \cap = \varnothing$
+\end{enumerate}
+
+\[
+\lim_{N \to +\infty} \frac{\card{A \cap [1, N]}}{N} = \frac{1}{2}, \quad \text{т.к. } I_{k \vdots 2} \text{ убывается } I_{k+1}
+\]
+\[
+\lim_{N \to +\infty} \frac{\card{B \cap [1, N]}}{N} = \frac{1}{2}
+\]
+
+$\implies \limsup\limits_{N \to +\infty} = \frac{1}{2}$ и $\liminf\limits_{N \to +\infty} = 0 \implies \not\exists \lim\limits_{N \to +\infty} \frac{\card{C \cap [1, N]}}{N} \implies$
+
+$\implies$ Этот класс не алгебра.
+
+\end{document}
