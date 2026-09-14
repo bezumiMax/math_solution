@@ -99,4 +99,130 @@ $\implies \limsup\limits_{N \to +\infty} = \frac{1}{2}$ и $\liminf\limits_{N \t
 
 $\implies$ Этот класс не алгебра.
 
+\bigskip
+\hrule
+\bigskip
+
+% ==================== ЗАДАЧА 3 ====================
+\section*{Задача 3}
+
+\noindent а) Пусть $B_1 = A_1$, $B_n = A_n \setminus A_{n-1} \; ; \quad B_i \cap B_j = \varnothing$, $A_n = \bigcup\limits_{i=1}^n B_i$, $A = \bigcup\limits_{i=1}^\infty B_i$
+
+\[
+\mu(A) = \mu\left(\bigcup_{i=1}^\infty B_i\right) = \sum_{i=1}^\infty \mu(B_i) = \lim_{n \to \infty} \left( \sum_{i=1}^n \mu(B_i) \right) = \lim_{n \to \infty} \left( \mu\left(\bigcup_{i=1}^n B_i\right) \right) = \lim_{n \to \infty} \mu(A_n)
+\]
+
+\bigskip
+
+\noindent Пусть $C_n = A_1 \setminus A_n \; ; \quad C_1 \subseteq C_2 \subseteq \dots$
+\[
+\bigcup_{n=1}^\infty C_n = \bigcup_{n=1}^\infty (A_1 \setminus A_n) = A_1 \setminus \bigcap_{n=1}^\infty A_n = A_1 \setminus A
+\]
+
+\[
+\mu(A_1 \setminus A) = \lim_{n \to \infty} \mu(A_1 \setminus A_n) \quad \text{по а);}
+\]
+
+\noindent $A_n \subseteq A_1$ и $\mu(A_1) < \infty \implies \mu(A_1 \setminus A_n) = \mu(A_1) - \mu(A_n)$,
+
+\noindent $A \subseteq A_1 \phantom{\text{и }\mu(A_1) < \infty} \implies \mu(A_1 \setminus A) = \mu(A_1) - \mu(A) \implies$
+
+\[
+\implies \mu(A_1) - \mu(A) = \lim_{n \to \infty} (\mu(A_1) - \mu(A_n))
+\]
+\[
+\mu(A) = \lim_{n \to \infty} \mu(A_n)
+\]
+
+\bigskip
+
+\noindent б) $B_n = A_n \setminus \left( \bigcup\limits_{i=1}^{n-1} A_i \right) \implies$
+\begin{enumerate}
+    \item[(1)] $B_n \subseteq A_n \implies \mu(B_n) \le \mu(A_n)$
+    \item[(2)] $B_i \cap B_j = \varnothing$
+    \item[(3)] $\bigcup\limits_{n=1}^\infty A_n = \bigcup\limits_{n=1}^\infty B_n$
+\end{enumerate}
+
+\[
+\mu\left(\bigcup_{i=1}^\infty A_i\right) = \mu\left(\bigcup_{i=1}^\infty B_i\right) = \sum_{i=1}^\infty \mu(B_i) \overset{(1)}{\le} \sum_{i=1}^\infty \mu(A_i)
+\]
+
+\bigskip
+
+\noindent (!): 
+\[
+\mu\left(\bigcup_{i=1}^n A_i\right) = \sum_{i=1}^n \mu(A_i) - \sum_{1 \le i < j \le n} \mu(A_i \cap A_j) + \sum_{1 \le i < j < k \le n} \mu(A_i \cap A_j \cap A_k) - \dots
+\]
+
+\[
+I_{\bigcup\limits_{i=1}^n A_i} = 1 - I_{\bigcap\limits_{i=1}^n \overline{A_i}} = 1 - \prod_{i=1}^n (1 - I_{A_i}) = \sum_{i=1}^n I_{A_i} - \sum_{1 \le i < j \le n} I_{A_i \cap A_j} + \dots
+\]
+
+\[
+\mu\left(\bigcup_{i=1}^n A_i\right) = \int I_{\bigcup\limits_{i=1}^n A_i} \, d\mu = \sum_{i=1}^n \mu(A_i) - \sum_{1 \le i < j \le n} \mu(A_i \cap A_j) + \dots
+\]
+
+\bigskip
+\hrule
+\bigskip
+
+% ==================== ЗАДАЧА 4 ====================
+\section*{Задача 4}
+
+\[
+\limsup_{n \to +\infty} A_n = \bigcap_{N=1}^\infty \bigcup_{n=N}^\infty A_n \; ; \quad B_N = \bigcup_{n=N}^\infty A_n
+\]
+
+\[
+\limsup_{n \to +\infty} A_n \subseteq B_N
+\]
+
+\[
+\mu(B_N) = \mu\left(\bigcup_{n=N}^\infty A_n\right) \le \sum_{n=N}^\infty \mu(A_n)
+\]
+
+\[
+0 \le \mu\left(\limsup_{n \to +\infty} A_n\right) \le \mu(B_N) \le \sum_{n=N}^\infty \mu(A_n) \to 0 \quad \text{при } N \to +\infty
+\]
+
+\[
+\implies \mu\left(\limsup_{n \to +\infty} A_n\right) = 0
+\]
+
+\bigskip
+\hrule
+\bigskip
+
+% ==================== ЗАДАЧА 5 ====================
+\section*{Задача 5}
+
+\noindent а) (!): $\mathbb{Q} = \bigcap\limits_{i=1}^\infty U_i$, где $U_i$ --- открыто в $\mathbb{R}$.
+
+\bigskip
+
+\noindent $I = \mathbb{R} \setminus \mathbb{Q} \; ; \quad \mathbb{Q} \text{ --- счетно} \implies I = \bigcap\limits_{i=1}^\infty \left(\mathbb{R} \setminus \{q_i\}\right)$
+
+\noindent Пусть (!) выполняется:
+\[
+\varnothing = \mathbb{Q} \cap I = \left(\bigcap_{i=1}^\infty U_i\right) \cap \left(\bigcap_{i=1}^\infty (\mathbb{R} \setminus \{q_i\})\right)
+\]
+
+\noindent \textbf{Теорема Бэра:} пусть $A_1, A_2, \dots$ --- плотны, тогда $\bigcap\limits_{i=1}^\infty A_i$ --- плотно.
+
+\bigskip
+
+\noindent $\mathbb{Q}$ --- плотно в $\mathbb{R} \; ; \quad \mathbb{Q} = \bigcap\limits_{i=1}^\infty U_i \implies \mathbb{Q} \subseteq U_i \implies \overline{\mathbb{Q}} \subseteq \overline{U_i}$
+\[
+\overline{\mathbb{Q}} = \mathbb{R} \implies \mathbb{R} \subseteq \overline{U_i} \implies \overline{U_i} = \mathbb{R} \implies U_i \text{ плотно в } \mathbb{R}
+\]
+
+\noindent Аналогично т.к. $I$ --- плотно в $\mathbb{R}$, то $\mathbb{R} \setminus \{q_i\}$ плотно в $\mathbb{R}$.
+
+\bigskip
+
+\noindent По теореме Бэра: $\left(\bigcap\limits_{i=1}^\infty U_i\right) \cap \left(\bigcap\limits_{i=1}^\infty (\mathbb{R} \setminus \{q_i\})\right)$ --- плотно в $\mathbb{R}$
+\[
+\implies \varnothing \text{ плотно в } \mathbb{R} \text{ --- противоречие.}
+\]
+
 \end{document}
