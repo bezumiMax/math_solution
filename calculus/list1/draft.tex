@@ -1,0 +1,125 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{utf8}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage[margin=2cm]{geometry}
+
+\begin{document}
+
+\section*{Задача №5}
+
+\begin{enumerate}
+    \item[b)] $\displaystyle\bigcap_{i=1}^{\infty} A_i = \bigcup_{i=1}^{\infty} B_i$, где $A_i$ --- открыто, $B_i$ --- замкнуто.
+    
+    Если $I \in F_\sigma$, то $\mathbb{Q} \in G_\delta$, но $\mathbb{Q} \notin G_\delta \Rightarrow I \notin F_\sigma$.
+    
+    Возьмём $E = (\mathbb{Q} \cap A) \cup ((\mathbb{R} \setminus \mathbb{Q}) \cap B)$, где $A = (-\infty; 0)$, $B = [0; +\infty)$.
+    
+    \begin{enumerate}
+        \item[1)] Если $E \in F_\sigma$, то $E \cap B \in F_\sigma$.
+        
+        $E \cap B = (\mathbb{R} \setminus \mathbb{Q}) \cap B \notin F_\sigma \Rightarrow E \notin F_\sigma$.
+        
+        \item[2)] Если $E \in G_\delta$, то $E \cap A \in G_\delta$.
+        
+        $E \cap A = \mathbb{Q} \cap A \notin G_\delta \Rightarrow E \notin G_\delta$.
+    \end{enumerate}
+\end{enumerate}
+
+\section*{Задача №6}
+
+$A$ --- множество $\alpha$, для которых $\exists$ бесконечно много $(a, q)$:
+
+\[
+\left| \alpha - \frac{a}{q} \right| \le \frac{1}{q^3}
+\]
+
+$E_{a, q}$ --- множество $\alpha \in A$ при фиксированных $a, q$.
+
+Если $\alpha \in E$, то $\alpha + N \in A$, где $N \in \mathbb{N}$:
+\[
+\begin{cases}
+\alpha' = \alpha + N \\
+a' = a + Nq
+\end{cases}
+\qquad 
+\left( \gcd(a', q) = \gcd(a + Nq, q) = \gcd(a, q) \right)
+\]
+\[
+\left| \alpha' - \frac{a'}{q} \right| = \left| (\alpha + N) - \frac{a + Nq}{q} \right| = \left| \alpha - \frac{a}{q} \right|
+\]
+Отображение из $[0, 1]$ биективно на $[N, N + 1]$.
+
+\medskip
+
+\[
+\left| \alpha - \frac{a}{q} \right| \le \frac{1}{q^3} \implies \frac{a}{q} - \frac{1}{q^3} \le \alpha \le \frac{a}{q} + \frac{1}{q^3} 
+\implies E_{a, q} = \left[ \frac{a}{q} - \frac{1}{q^3}, \frac{a}{q} + \frac{1}{q^3} \right] 
+\implies \lambda(E_{a, q}) = \frac{2}{q^3}
+\]
+
+Для $\alpha \in [0, 1]$:
+\[
+\frac{a}{q} - \frac{1}{q^3} \le \alpha \le \frac{a}{q} + \frac{1}{q^3}; \; \alpha \in [0, 1] \implies -\frac{1}{q^2} \le a \le q + \frac{1}{q^2} \quad (q > 0)
+\]
+При условиях $0 \le a < q$ и $a \in \mathbb{Z}$:
+\[
+\begin{cases}
+q = 1: & -1 \le a \le 2 \\
+q \ge 2: & -0.25 \le a \le q - 0.25
+\end{cases}
+\]
+
+Фиксируем только $q$: $B_q = \displaystyle\bigcup_{\gcd(a, q) = 1} E_{a, q}$.
+
+\[
+\limsup_{q \to +\infty} B_q = \bigcap_{N=1}^{\infty} \left( \bigcup_{q=N}^{\infty} B_q \right)
+\]
+\[
+\limsup_{q \to +\infty} \left( \bigcup_{\gcd(a, q) = 1} E_{a, q} \right) = E = A
+\]
+
+Оценка меры:
+\[
+\sum_{q=1}^{\infty} \sum_{\substack{0 \le a < q \\ \gcd(a, q) = 1}} \lambda(E_{a, q}) 
+\le \sum_{q=1}^{\infty} \sum_{a=0}^{q} \frac{2}{q^3} 
+= \sum_{q=1}^{\infty} \frac{2(q+1)}{q^3} 
+= 2 \sum_{q=1}^{\infty} \frac{1}{q^2} + 2 \sum_{q=1}^{\infty} \frac{1}{q^3} < \infty
+\]
+
+\[
+\implies \mu(E \cap [0, 1]) = 0 \implies \mu(E) = 0
+\]
+
+\section*{Задача №7}
+
+\[
+K(a) = \bigcap_{n=1}^{\infty} E_n, \quad E_n \text{ --- замкнуто} \implies K(a) \text{ --- замкнуто}
+\]
+
+\[
+d_n = \frac{d_{n-1} - a^n}{2} = \frac{1}{2^n} \left( 1 - \sum_{k=1}^{n} 2^{k-1} a^k \right) \to 0 \quad \text{при } n \to +\infty
+\]
+
+\[
+x \in K(a) \implies x \in E_n, \; \forall n \in \mathbb{N} \implies x \in [a_n(x), b_n(x)]
+\]
+\[
+a_n(x), b_n(x) \in E_n, \; \forall n \in \mathbb{N}
+\]
+\[
+|x - a_n(x)| \le d_n, \quad |x - b_n(x)| \le d_n
+\]
+\[
+d_n \to 0 \implies \forall \varepsilon > 0 : (x - \varepsilon, x + \varepsilon) \cap (K(a) \setminus \{x\}) \neq \varnothing
+\]
+
+Пусть $G$ --- удаляемые множества:
+\[
+\implies \lambda(G) = \sum_{n=1}^{\infty} 2^{n-1} a^n = a \sum_{n=1}^{\infty} (2a)^{n-1} = \frac{a}{1 - 2a}
+\]
+\[
+\lambda(K(a)) = \lambda([0, 1]) - \lambda(G) = \frac{1 - 3a}{1 - 2a} > 0
+\]
+
+\end{document}
