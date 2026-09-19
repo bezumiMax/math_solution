@@ -1,0 +1,130 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\paragraph{№ 1}
+
+\subparagraph{а)} 
+Пусть $E_n = \left\{ x \in E \;\middle|\; |f(x)| \geqslant \frac{1}{n} \right\}$, $n \in \mathbb{N}$.
+
+$$
+0 = \int\limits_{E} |f(x)|\,d\mu(x) \geqslant \int\limits_{E_n} |f(x)|\,d\mu(x) \geqslant \int\limits_{E_n} \frac{1}{n}\,d\mu(x) = \frac{1}{n}\,\mu(E_n) \implies
+$$
+
+$$
+\implies \frac{1}{n}\,\mu(E_n) \leqslant 0, \quad \mu(E_n) \geqslant 0, \quad \frac{1}{n} > 0 \implies \mu(E_n) = 0
+$$
+
+$$
+\{ x \in E \mid |f(x)| > 0 \} = \bigcup_{n=1}^{\infty} E_n \leqslant \sum_{n=1}^{\infty} \mu(E_n) = 0 \implies f(x) = 0 \text{ п.в.}
+$$
+
+\subparagraph{б)}
+$f = f^+ - f^-$
+
+$A^+ = \{ x \in E \mid f(x) \geqslant 0 \}$, из (а): $f(\chi_{E \setminus A^+}) = 0$ п.в. $\implies \mu(\{x \in E \mid f(x) > 0\}) = 0$;
+
+$A^- = \{ x \in E \mid f(x) < 0 \}$
+
+$$
+\int\limits_{A^-} f(x)\,d\mu = 0 \implies \int\limits_{A^-} (-f(x))\,d\mu = 0 \implies f(x) = 0 \text{ п.в. на } A^-
+$$
+
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+\paragraph{№ 2}
+
+\subparagraph{1)}
+$A = \{0, 1\}$, \quad $B = (0, 1)$
+
+$$
+d_x(A) = 0, \qquad d_{[x]}(B) = 0
+$$
+$$
+d_x(B) = 1, \qquad d_{[x]}(A) = 1
+$$
+
+\subparagraph{2)}
+$A = C$
+
+$B = [0, 1] \setminus C$
+
+$$
+d_x(A) = 0 \qquad d_x(B) = 1
+$$
+$$
+d_\lambda(B) = 0 \qquad d_\lambda(A) = 1
+$$
+
+\subparagraph{3)}
+$A = \{0, 1\}$
+
+$B = (0, 1)$
+
+$$
+d_\lambda(A) = d_\lambda(\{0\}) + d_\lambda(\{1\}) = 0
+$$
+$$
+d_{[x]}(B) = 0
+$$
+$$
+d_\lambda(B) = 1
+$$
+$$
+d_{[x]}(A) = 1
+$$
+
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+\paragraph{№ 3}
+
+$$
+\mu_F((a, b]) = F(b) - F(a) = \int\limits_a^b F'(x)\,dx = \int\limits_{(a, b]} F'(x)\,dx
+$$
+
+\subparagraph{Теорема Леви:}
+$(X, \mathcal{A}, \mu)$; $f_n \colon X \to [0, +\infty)$, $0 \leqslant f_1 \leqslant f_2 \leqslant \dots$ п.в. $x \in X$.
+
+Если $f(x) = \lim\limits_{n \to +\infty} f_n(x)$ п.в. $x \in X$, то $f(x)$ --- измерима, и
+$$
+\int\limits_X f\,d\mu = \lim\limits_{n \to +\infty} \int\limits_X f_n\,d\mu
+$$
+
+\bigskip
+
+\subparagraph{Вычисление интеграла:}
+
+$$
+\int\limits_{\mathbb{R}} f(x)\,d\mu_F(x) = \lim\limits_{n \to +\infty} \left( \int\limits_{\mathbb{R}} f_n(x)\,d\mu_F(x) \right) = \lim\limits_{n \to +\infty} \left( \int\limits_{\mathbb{R}} \sum_{k=1}^m c_k \mathbb{I}_{E_k}(x)\,d\mu(x) \right) =
+$$
+
+$$
+= \lim\limits_{n \to +\infty} \left( \sum_{k=1}^m c_k \mu_F(E_k) \right) = \lim\limits_{n \to +\infty} \left( \sum_{k=1}^m c_k \int\limits_{E_k} F'(x)\,dx \right) =
+$$
+
+$$
+= \lim\limits_{n \to +\infty} \left( \sum_{k=1}^m c_k \int\limits_{\mathbb{R}} \mathbb{I}_{E_k}(x) F'(x)\,dx \right) = \lim\limits_{n \to +\infty} \left( \int\limits_{\mathbb{R}} f_n(x) F'(x)\,dx \right) = \int\limits_{\mathbb{R}} f(x) F'(x)\,dx
+$$
+
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+\paragraph{№ 4}
+
+$$
+F_1(x) + C = F_2(x), \quad C \in \mathbb{R}
+$$
+
+\end{document}
