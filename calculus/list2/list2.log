@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2026.9.9)  19 SEP 2026 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2026.9.9)  24 SEP 2026 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -192,23 +192,19 @@ File: t2aenc.dfu 2022/06/07 v1.3c UTF-8 support
    defining Unicode char U+04B0 (decimal 1200)
    defining Unicode char U+04B1 (decimal 1201)
    defining Unicode char U+04B2 (decimal 1202)
-   defining Unicode char U+04B3ut stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
-? 
-! Interruption.
-\__msg_use:nnnnnnn ...nnnn {msg}{unknown}{#2}{#3}}
-                                                  \cs_if_exist_use:N \condit...
-l.7 \babelfont{rm}{Noto Sans}
-                             
-? 
-! Interruption.
-\__fontspec_load_font: ...clist }}{\f@size pt+2sp}
-                                                  \l__fontspec_fontface_cs_tl 
-l.7 \babelfont{rm}{Noto Sans}
-                             
-? 34)
+   defining Unicode char U+04B3 (decimal 1203)
+   defining Unicode char U+04B6 (decimal 1206)
+   defining Unicode char U+04B7 (decimal 1207)
+   defining Unicode char U+04B8 (decimal 1208)
+   defining Unicode char U+04B9 (decimal 1209)
+   defining Unicode char U+04BA (decimal 1210)
+   defining Unicode char U+04BB (decimal 1211)
+   defining Unicode char U+04C0 (decimal 1216)
+   defining Unicode char U+04C1 (decimal 1217)
+   defining Unicode char U+04C2 (decimal 1218)
+   defining Unicode char U+04D0 (decimal 1232)
+   defining Unicode char U+04D1 (decimal 1233)
+   defining Unicode char U+04D2 (decimal 1234)
    defining Unicode char U+04D3 (decimal 1235)
    defining Unicode char U+04D4 (decimal 1236)
    defining Unicode char U+04D5 (decimal 1237)
@@ -409,8 +405,7 @@ Package: amsthm 2020/05/29 v2.20.6
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count278
 \l__pdf_internal_box=\box53
-)
-No file list2.aux.
+) (list2.aux)
 \openout1 = `list2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -429,6 +424,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -476,37 +472,38 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/sorvi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (list2.a
-ux)
+{C:/Users/sorvi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] (lis
+t2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4417 strings out of 474486
- 67570 string characters out of 5753571
- 1934542 words of memory out of 5000000
- 26676 multiletter control sequences out of 15000+600000
- 565957 words of font info for 58 fonts, out of 8000000 for 9000
+ 4424 strings out of 474486
+ 67730 string characters out of 5753571
+ 1935542 words of memory out of 5000000
+ 26680 multiletter control sequences out of 15000+600000
+ 566834 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,6n,65p,270b,204s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\sorvi\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm10
+ <C:\Users\sorvi\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati10
 95.pk> <C:\Users\sorvi\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-bx1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
-:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
-les/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
-:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Fi
-les/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb>
-Output written on list2.pdf (2 pages, 138752 bytes).
+rm1095.pk> <C:\Users\sorvi\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\labx1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pf
+b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pf
+b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1
+/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb>
+Output written on list2.pdf (3 pages, 156362 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
+ 161 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

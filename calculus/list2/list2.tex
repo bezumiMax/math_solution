@@ -127,4 +127,83 @@ $$
 F_1(x) + C = F_2(x), \quad C \in \mathbb{R}
 $$
 
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+\paragraph{№ 5}
+
+\subparagraph{1)}
+$\lambda(E) < \infty$
+
+$F(x) = \lambda(E \cap (-\infty, x])$
+
+$x_2 > x_1$: $F(x_2) - F(x_1) = \lambda(E \cap (x_1, x_2]) \leqslant \lambda((x_1, x_2]) = x_2 - x_1$
+
+$\Rightarrow$ липшицевость $\Rightarrow$ непрерывность
+
+$\lim\limits_{x \to -\infty} F(x) = \lambda(\emptyset) = 0$
+
+$\lim\limits_{x \to +\infty} F(x) = \lambda(E)$
+
+По т. о промежуточном значении:
+
+$\exists x_0 \in \mathbb{R}: F(x_0) = \frac{1}{2}\lambda(E) \in [0; \lambda(E)]$
+
+$\Rightarrow E' = E \cap (-\infty, x_0]$
+
+\subparagraph{2)}
+$\lambda(E) = \infty$
+
+$\Rightarrow \lambda(E') = \infty$, где $E'$ --- разбиение $E$, т.т. $E' \subset E$
+
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+\paragraph{№ 6}
+
+\subparagraph{а)}
+$F$ --- замкнуто, $F \subseteq [0, 1]$
+
+$f_n(x) = \max(0, 1 - n \rho(x, F))$ \quad (в рукописи может быть \textit{min}, но для сходимости к $1_F$ корректно \textit{max})
+
+$f_n \to 1_F$ при $n \to +\infty$
+
+$\mu(F) = \lim\limits_{n \to +\infty} \int\limits_{[0,1]} f_n\,d\mu = \lim\limits_{n \to +\infty} \int\limits_{[0,1]} f_n\,d\lambda = \lambda(F)$
+
+$\mathcal{D} = \{A \in \mathcal{B}([0,1]) : \mu(A) = \lambda(A)\} \leftarrow$ содержит все замкнутые
+
+$\sigma(\text{замкнутые}) = \sigma(\text{открытые}) = \mathcal{B}([0,1])$
+
+1) $[0,1] \in \mathcal{D}$
+
+2) $A$ --- замкнут, $A \subseteq [0,1]$: $\mu(\bar{A}) = \mu([0,1]) - \mu(A) = \lambda([0,1]) - \lambda(A) = \lambda(\bar{A})$
+
+3) $\bigsqcup\limits_{i=1}^\infty A_i \in \mathcal{D}$
+
+$\Rightarrow \mathcal{D}$ --- $\lambda$-система
+
+$P = \{A \subseteq [0,1] : A \text{ --- замкнут.}\} \Rightarrow P \subseteq \mathcal{D}$
+
+по лемме Дынкина: $\sigma(P) \subseteq \mathcal{D}$
+
+$\mathcal{B}([0,1]) \subseteq \mathcal{D}$
+
+$\Rightarrow \mu = \lambda$ на $\mathcal{B}([0,1])$
+
+\vspace{1.5em}
+\hrule
+\vspace{1.5em}
+
+\paragraph{Определения}
+
+$A$ --- хаусдорфово, если $\forall x, y \in X$ $(x \neq y)$ и $\exists U, V \subseteq A$:
+\begin{enumerate}
+    \item $x \in U$, $y \in V$
+    \item $U \cap V = \emptyset$
+\end{enumerate}
+
+$A$ --- компактное, если $A \subseteq \bigcup\limits_{i=1}^n B_n$, где $B_n$ --- открыто.
+
 \end{document}
