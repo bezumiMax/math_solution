@@ -1,0 +1,161 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\noindent \textbf{N 1}
+
+\[
+I_{k,j} = \left[ \frac{j-1}{k} ; \frac{j}{k} \right] \Rightarrow A_1, A_2, \dots, A_n \text{ --- разбиение } [0,1]:
+\]
+
+\[
+F_n(x) = I_{A_n}(x)
+\]
+
+\[
+\boxed{A_1 = [0,1], \quad A_2 = \left[0, \frac{1}{2}\right], \quad A_3 = \left[\frac{1}{2}, 1\right], \dots}
+\]
+
+\[
+\int_0^1 F_n(x) dx = |A_n| = \frac{1}{k} ; \quad n \to \infty \Rightarrow \frac{1}{k} \to 0
+\]
+
+\[
+\Rightarrow \limsup_{n \to \infty} \int_0^1 F_n(x) dx = 0
+\]
+
+\[
+\limsup_{n \to \infty} F_n(x) = 1, \text{ т.к. } \forall N \in \mathbb{N} \quad \exists n \ge N : F_n(x) = 1
+\]
+
+\[
+\Rightarrow \int_0^1 \limsup_{n \to \infty} F_n(x) dx = 1 > 0 = \limsup_{n \to \infty} \int_0^1 F_n(x) dx
+\]
+
+\vspace{1cm}
+
+\noindent \textbf{N 2}
+
+\textbf{а)}
+\[
+f(x) = \sqrt{x}
+\]
+\[
+F(x) = F(0) + \int_0^x \frac{1}{2\sqrt{t}} dt ; \quad \frac{1}{2\sqrt{t}} \in L^1(0,1), \text{ т.к. } \int_0^1 \left| \frac{1}{2\sqrt{t}} \right| dt < \infty
+\]
+\[
+\Rightarrow F(x) \text{ --- абс. непр.}
+\]
+\[
+y=0 : \quad \frac{|\sqrt{x} - 0|}{|x - 0|} = \frac{1}{\sqrt{x}} \to \infty \quad (\sqrt{x} \to 0) \text{ --- не липшицева}
+\]
+
+\textbf{б)}
+\[
+F(x) = 
+\begin{cases} 
+0, & x \in \left[0; \frac{1}{2}\right) \\ 
+1, & x \in \left[\frac{1}{2}; 1\right] 
+\end{cases}
+\]
+
+\vspace{1cm}
+
+\noindent \textbf{N 3}
+
+\textbf{а)}
+\[
+u = (\cos\theta, \sin\theta)
+\]
+\[
+\lim_{t \to 0} \frac{F(t\cos\theta, t\sin\theta) - F(0,0)}{t} = \cos^3\theta \Rightarrow |\cos^3\theta| \le 1
+\]
+
+\textbf{б)} 
+если \(\gamma(t) \ne (0,0)\), то \(F(\gamma(t))\) --- непр. дифф.
+если \(\gamma(t_0) = (0,0)\), то \(\gamma'(t_0) = \lim_{h \to 0} \frac{\gamma(t_0+h) - \gamma(t_0)}{h}\)
+\[
+h\gamma'(t_0) + o(h) = \gamma(t_0+h) - \gamma(t_0) = \gamma(t_0+h)
+\]
+\[
+F(\gamma(t_0+h)) = F(h(\gamma'(t_0) + o(1))) = h F(\gamma'(t_0) + o(1))
+\]
+\[
+\frac{F(\gamma(t_0+h)) - F(\gamma(t_0))}{h} = \frac{F(\gamma(t_0+h))}{h} = F(\gamma'(t_0) + o(1)) \to F(\gamma'(t_0))
+\]
+\[
+\Rightarrow (F(\gamma(t_0)))' = F(\gamma'(t_0))
+\]
+\[
+(F(\gamma(t)))' = \nabla F(\gamma(t)) \cdot \gamma'(t)
+\]
+\[
+\nabla F(\gamma(t_0+h)) = \nabla F\left(\frac{\gamma(t_0+h)}{|\gamma(t_0+h)|}\right) = \nabla F\left(\frac{h\gamma'(t_0) + o(h)}{|h\gamma'(t_0) + o(h)|}\right) = \nabla F\left(\frac{\gamma'(t_0) + o(1)}{|\gamma'(t_0) + o(1)|}\right)
+\]
+\[
+= \nabla F(\gamma'(t_0) + o(1)) \to \nabla F(\gamma'(t_0)) \text{ при } t \to t_0, \gamma'(t_0) \ne 0
+\]
+\[
+|\nabla F(\gamma(t))| \le M \Rightarrow |(F(\gamma(t)))'| \le M |\gamma'(t)| \to 0 = \gamma'(t_0),
+\]
+при \(t \to t_0\), \(\gamma'(t_0) = 0\)
+
+\textbf{в)}
+\[
+dF(x,y) = F'_x(x,y) dx + F'_y(x,y) dy = dx
+\]
+Опр. дифференцируемости в т. (0,0):
+\[
+F(0+h, 0+k) = F(0,0) + dF(0,0)(h,k) + o\left(\sqrt{h^2+k^2}\right) = h + o\left(\sqrt{h^2+k^2}\right)
+\]
+\[
+\Rightarrow (!): \quad F(h,k) - h = o\left(\sqrt{h^2+k^2}\right)
+\]
+\[
+F(t,t) = \frac{t}{2}
+\]
+\[
+F(t,t) - t = -\frac{t}{2} \Rightarrow \frac{F(t,t) - t}{\sqrt{t^2+t^2}} = \frac{-\frac{t}{2}}{|t|\sqrt{2}} = -\frac{\text{sgn}(t)}{2\sqrt{2}} \not\to 0,
+\]
+при \(t \to 0\)
+\[
+\Rightarrow F \text{ не дифф. в } (0,0)
+\]
+
+\vspace{1cm}
+
+\noindent \textbf{N 4}
+
+\[
+\|A\| := \sup_{\|x\| \le 1} \|Ax\|
+\]
+
+\[
+(Ax)_i = \sum_{j=1}^n a_{ij} x_j
+\]
+
+\[
+\|Ax\|^2 = \sum_{i=1}^m \left( \sum_{j=1}^n a_{ij} x_j \right)^2
+\]
+
+\[
+\|Ax\|^2 \le \sum_{i=1}^m \left( \sum_{j=1}^n a_{ij}^2 \right) \|x\|^2 = \|x\|^2 \left( \sum_{i=1}^m \sum_{j=1}^n a_{ij}^2 \right)
+\]
+
+\[
+\text{при } \|x\| \le 1: \quad \|Ax\| \le \left( \sum a_{ij}^2 \right)^{\frac{1}{2}}
+\]
+
+\[
+\Downarrow
+\]
+
+\[
+\|A\| \le \left( \sum a_{ij}^2 \right)^{\frac{1}{2}}
+\]
+
+\end{document}
