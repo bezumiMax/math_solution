@@ -158,4 +158,53 @@ F(t,t) - t = -\frac{t}{2} \Rightarrow \frac{F(t,t) - t}{\sqrt{t^2+t^2}} = \frac{
 \|A\| \le \left( \sum a_{ij}^2 \right)^{\frac{1}{2}}
 \]
 
+
+\vspace{1cm}
+
+\noindent \textbf{N 5}
+
+\[
+y_0 \in I ; \quad \Phi(y) = \int_E f(x,y) dx
+\]
+
+\[
+(!): \Phi(y) \text{ --- дифф-ма в т. } y_0 \text{ и } \frac{d\Phi(y)}{dy} = \int_E \frac{\partial f(x,y)}{\partial y} dx
+\]
+
+\[
+h \neq 0, \quad y_0+h \in I
+\]
+
+\[
+\frac{\Phi(y_0+h) - \Phi(y_0)}{h} = \int_E \frac{f(x, y_0+h) - f(x, y_0)}{h} dx
+\]
+
+\[
+g_h(x) = \frac{f(x, y_0+h) - f(x, y_0)}{h} = \frac{\partial f}{\partial y}(x, \xi), \quad \xi \in (y_0, y_0+h)
+\]
+
+\[
+\left| \frac{\partial f}{\partial y}(x, \xi) \right| \le F(x), \quad F(x) \text{ --- мажоранта}
+\]
+
+\[
+\lim_{h \to 0} g_h(x) = \frac{\partial f}{\partial y}(x, y_0)
+\]
+
+\[
+\text{по т. Лебега о мажорир. сх.:}
+\]
+
+\[
+\lim_{h \to 0} \int_E g_h(x) dx = \int_E \lim_{h \to 0} g_h(x) dx
+\]
+
+\[
+\Rightarrow \lim_{h \to 0} \int_E \frac{f(x, y_0+h) - f(x, y_0)}{h} dx = \int_E \frac{\partial f(x, y_0)}{\partial y} dx
+\]
+
+\[
+\frac{d}{dy} \int_E f(x, y_0) dx = \int_E \frac{\partial f(x, y_0)}{\partial y} dx
+\]
+
 \end{document}
