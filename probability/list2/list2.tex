@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian,english]{babel}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{N1}
+
+(i) $(\Rightarrow)$: $(\xi_n, \mathcal{F}_n)$ - мартингал $\Rightarrow E(\xi_n \mid \mathcal{F}_{n-1}) = \xi_{n-1}$
+
+$E(\xi_0) < \infty$
+
+$E(\xi_n \mid \mathcal{F}_{n-1}) = E(\xi_n) = C = \xi_{n-1}$
+
+$\Rightarrow \forall n: \xi_n = C$
+
+$(\Leftarrow)$: $E(\xi_n \mid \mathcal{F}_{n-1}) = E(\xi_n) = C = \xi_{n-1} \Rightarrow (\xi_n, \mathcal{F}_n)$ - мартингал
+
+(ii): $E(\xi_n) = E(\xi_0) = 0$
+
+$E(S_n \mid \mathcal{F}_{n-1}) = E(S_{n-1} \mid \mathcal{F}_{n-1}) + E(\xi_n \mid \mathcal{F}_{n-1}) = S_{n-1} + E(\xi_0) = S_{n-1} \Rightarrow$
+
+$\Rightarrow (S_n, \mathcal{F}_n)$ - мартингал
+
+(iii): $\xi_1, \xi_2, \dots$ - независимые $\Rightarrow E\left(\prod_{k=1}^n \xi_k\right) = \prod_{k=1}^n E(\xi_k)$
+
+$E(\Pi_n \mid \mathcal{F}_{n-1}) = E(\xi_n \mid \mathcal{F}_{n-1}) \cdot E(\Pi_{n-1} \mid \mathcal{F}_{n-1}) = E(\xi_n) \cdot \Pi_{n-1} =$
+
+$= \Pi_{n-1} \Rightarrow (\Pi_n, \mathcal{F}_n)$ - мартингал
+
+(iv): $M = e^{S_n - na} = e^{-na} \prod_{k=1}^n e^{\xi_k}$
+
+$E(M) = e^{-na} \prod_{k=1}^n E(e^{\xi_k}) = e^{-na} (e^a)^n = 1 < \infty$
+
+\section*{N2}
+
+$\xi_n = a + \sum_{j=1}^n I_j$
+
+$P(\xi_n = a+k) = \left( \frac{a(a+1)\dots(a+k-1) b(b+1)\dots(b+n-k-1)}{(a+b)(a+b+1)\dots(a+b+n-1)} \right) \binom{n}{k}$
+
+$\Rightarrow \xi_n \sim \text{BetaBin}(n, a, b)$
+
+(ii): $\eta_n = \frac{\xi_n}{n+a+b}$
+
+$T_n = n+a+b \Rightarrow T_{n+1} = T_n + 1$
+
+$P(I_{n+1}=1 \mid \mathcal{F}_n) = \frac{\xi_n}{T_n} ; \quad E(\xi_{n+1} \mid \mathcal{F}_n) = \xi_n + E(I_{n+1} \mid \mathcal{F}_n) =$
+
+$= \xi_n + P(I_{n+1}=1 \mid \mathcal{F}_n) = \xi_n + \frac{\xi_n}{T_n}$
+
+$E(\eta_{n+1} \mid \mathcal{F}_n) = E\left(\frac{\xi_{n+1}}{T_{n+1}} \mid \mathcal{F}_n\right) = \frac{E(\xi_{n+1} \mid \mathcal{F}_n)}{T_{n+1}} = \frac{\xi_n + \frac{\xi_n}{T_n}}{T_n + 1} = \frac{\xi_n(1 + \frac{1}{T_n})}{T_n + 1} =$
+
+$= \frac{\xi_n}{T_n} = \eta_n$
+
+(iii): Теорема Дуба о сходимости мартингалов:
+
+Если $(X_n, \mathcal{F}_n)$ - мартингал, $\sup_n E(X_n) < \infty$, то
+
+$\exists X_\infty : X_n \to X_\infty$ (п.н.)
+
+$0 \le \eta_n \le 1 \Rightarrow \eta_n \to \eta$ при $n \to \infty$
+
+$E(\eta_n^m) = \frac{1}{(a+b+n)^m} E\left[ \left(a + \sum_{k=0}^n I_k\right)^m \right]$
+
+$\eta_n^m = \frac{(\sum_{k=0}^n I_k)^m}{n^m}$ при $n \to \infty$
+
+$\Rightarrow E(\eta_n^m) = \frac{1}{n^m} E\left(\sum_{k=0}^n I_k\right)^m + o(1)$
+
+$E(I_{j_1} \dots I_{j_m}) = \frac{(a)_m}{(a+b)_m}$
+
+\end{document}
