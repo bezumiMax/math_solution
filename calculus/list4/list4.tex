@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+
+\begin{document}
+
+\section*{№1}
+
+\(\sigma\)-конечная мера - мера, при которой всё пространство можно покрыть счётным объединением множеств конечной меры.
+
+\[
+E_t = \{x : f(x) > t\}, \; t \ge 0
+\]
+
+\[
+E = \{(x,t) : f(x) > t\} \subset X \times [0, +\infty) \Rightarrow \mu \otimes dt \text{ - мера на } E
+\]
+
+\[
+\varphi(f(x)) = \int_0^{f(x)} \varphi'(t) dt = \int_0^{+\infty} I_{\{f(x) > t\}} \varphi'(t) dt
+\]
+
+\[
+\int_X \varphi(f(x)) d\mu = \int_X \int_0^{+\infty} I_{\{f(x) > t\}} \varphi'(t) dt d\mu = \int_0^{+\infty} \varphi'(t) \left( \int_X I_{\{f(x) > t\}} d\mu \right) dt
+\]
+
+\[
+= \int_0^{+\infty} \varphi'(t) \mu\{x : f(x) > t\} dt
+\]
+
+\section*{№2}
+
+\textbf{а)}
+\[
+\forall p \ge 1 \text{ и } f \in L^p : \|f\|_p = \left( \int_X |f|^p d\mu \right)^{\frac{1}{p}}
+\]
+
+1) \(s < \infty\)
+
+\[
+(!) : \left( \int_X |f|^s d\mu \right)^{\frac{1}{s}} \le \left( \int_X |f|^p d\mu \right)^{\frac{1}{p}}
+\]
+
+\[
+\int_X |f|^s d\mu \le \left( \int_X |f|^p d\mu \right)^{\frac{s}{p}}
+\]
+
+\[
+\left( \int_X |f|^s d\mu \right)^{\frac{p}{s}} \le \int_X |f|^p d\mu \text{ по Гёльдеру } \Rightarrow (!) \text{ выполняется}
+\]
+
+\[
+\Rightarrow \|f\|_s \le \|f\|_p \Rightarrow L_s \subset L_p
+\]
+
+2) \(s = \infty \Rightarrow f \in L^\infty\)
+
+\[
+|f(x)| \le \|f\|_\infty
+\]
+
+\[
+\Rightarrow \int_X |f(x)|^p d\mu \le \int_X \|f\|_\infty^p d\mu = \|f\|_\infty^p \mu(X) = \|f\|_\infty^p
+\]
+
+\[
+\Rightarrow \|f\|_p \le \|f\|_\infty \; \forall p
+\]
+
+\vspace{1em}
+
+\textbf{б)}
+Пусть \(I(p) = \int_X |f|^p d\mu \Rightarrow \|f\|_p = I(p)^{\frac{1}{p}}\)
+
+\[
+\ln \|f\|_p = \frac{1}{p} \ln I(p)
+\]
+
+\[
+\lim_{p \to 0} \ln \|f\|_p = \lim_{p \to 0} \frac{\ln I(p)}{p} = \left[ \frac{0}{0} \right] = \lim_{p \to 0} \frac{I'(p)}{1} = \lim_{p \to 0} I'(p)
+\]
+
+\[
+I'(p) = \frac{d}{dp} \int_X |f|^p d\mu = \int_X \frac{\partial}{\partial p} |f|^p d\mu = \int_X |f|^p \ln |f| d\mu
+\]
+
+\[
+\lim_{p \to 0} I'(p) = \int_X \ln |f| d\mu
+\]
+
+\[
+\Rightarrow \lim_{p \to 0} \|f\|_p = \exp\left( \int_X \ln |f| d\mu \right)
+\]
+
+\section*{№3}
+
+по нер-ву Коши-Шварца:
+
+\[
+\left( \int_X \sqrt{fg} d\mu \right)^2 \le \left( \int_X f d\mu \right) \left( \int_X g d\mu \right)
+\]
+
+\[
+fg \ge 1 \Rightarrow \sqrt{fg} \ge 1 \Rightarrow \int_X \sqrt{fg} d\mu \ge \int_X 1 d\mu = \mu(X) = 1 \Rightarrow
+\]
+
+\[
+\Rightarrow \left( \int_X \sqrt{fg} d\mu \right)^2 \ge 1 \Rightarrow \left( \int_X f d\mu \right) \left( \int_X g d\mu \right) \ge 1.
+\]
+
+\end{document}
