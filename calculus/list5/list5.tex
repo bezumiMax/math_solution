@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[T2A]{fontenc} % Добавлено для корректного отображения кириллицы
+
+\begin{document}
+
+\section*{№1}
+
+\[ |M|(E) = \sup \sum_{i=1}^{\infty} |M(E_i)| \]
+
+1) Пусть \(E_i = \emptyset\) при \(i > N\):
+\[ \sup \sum_{i=1}^{N} |M(E_i)| = \sup \sum_{i=1}^{\infty} |M(E_i)| \le |M|(E) \Rightarrow \]
+\[ \Rightarrow \lambda(E) \le |M|(E) \]
+
+2) \(\forall \varepsilon > 0 \ \exists \{A_i\}_{i=1}^{\infty} : \sum_{i=1}^{\infty} |M(A_i)| > |M|(E) - \frac{\varepsilon}{2}\)
+\[ \sum_{i=1}^{\infty} |M(A_i)| - \text{сх.} \Rightarrow \exists N: \sum_{i=N+1}^{\infty} |M(A_i)| < \frac{\varepsilon}{2} \]
+Пусть \(E_1 = A_1, \dots, E_N = A_N, E_{N+1} = \bigcup_{i=N+1}^{\infty} A_i\)
+\[ \sum_{i=1}^{N+1} |M(E_i)| = \sum_{i=1}^{N} |M(A_i)| + |M(\bigcup_{i=N+1}^{\infty} A_i)| \]
+\[ \sum_{i=1}^{N+1} |M(E_i)| \ge \sum_{i=1}^{N} |M(A_i)| = \sum_{i=1}^{\infty} |M(A_i)| - \sum_{i=N+1}^{\infty} |M(A_i)| > \]
+\[ > (|M|(E) - \frac{\varepsilon}{2}) - \frac{\varepsilon}{2} = |M|(E) - \varepsilon \]
+\[ \lambda(E) \ge \sum_{i=1}^{N+1} |M(E_i)| > |M|(E) - \varepsilon \]
+\[ \lambda(E) \ge |M|(E) \]
+
+\section*{№2}
+
+\[ \#(A) = 0 \Rightarrow A = \emptyset \Rightarrow dx(A) = 0 \]
+\(\#\) не имеет разложения отн. \(dx\)
+
+\section*{№3}
+
+\[ f \in L^p([0, 1]) \Leftrightarrow \int_0^1 |f(x)|^p dx < \infty \]
+\[ f \in L^{\infty}([0, 1]) \Leftrightarrow \sup_{x \in [0, 1]} |f(x)| < \infty \text{ п.в.} \]
+\[ \int_0^1 |f(x)|^p dx \le \int_0^1 M^p dx \le M^p \quad \forall p : 1 \le p < \infty \]
+\[ \Rightarrow f \in L^p([0, 1]) \]
+\[ f = \ln x \]
+\[ \int_0^1 |\ln x|^p dx = \left| \begin{array}{l} x = e^{-t} \\ dx = -e^{-t} dt \\ x(0) = +\infty \\ x(1) = 0 \end{array} \right| = \int_0^{+\infty} t^p e^{-t} dt = \int_0^1 t^p e^{-t} dt + \int_1^{+\infty} t^p e^{-t} dt \]
+\[ 0 \le t^p e^{-t} \le 1 \text{ при } t \in [0, 1] \]
+\[ t^p \le e^{t/2} \text{ при } t \to +\infty \Rightarrow t^p e^{-t} \le e^{-t/2} \]
+\[ \int_1^{\infty} t^p e^{-t} dt \le \int_1^{\infty} e^{-t/2} dt = 2e^{-1/2} < \infty \]
+\[ \Rightarrow f \in \bigcup_{1 \le p < \infty} L^p([0, 1]), \text{ но } f \notin L^{\infty}([0, 1]) \]
+\[ \Rightarrow L^{\infty}([0, 1]) \subset \bigcup_{1 \le p < \infty} L^p([0, 1]) \]
+
+\end{document}
