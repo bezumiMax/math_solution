@@ -86,4 +86,23 @@
 \[ \int_0^1 |v(x)|^2 dx \le \left( \int_0^1 (v'(t))^2 dt \right) \left( \int_0^1 x dx \right) = \frac{1}{2} \int_0^1 (v'(t))^2 dt \]
 \[ \Rightarrow ||v||_{L^2}^2 \le \frac{1}{2} ||v'||_{L^2}^2 \]
 
+\section*{№7 (продолжение)}
+
+\[ F \in L^2([0, 1]) \]
+\[ L_F(v) = \int_0^1 F(x)v(x) dx, \quad \forall v \in W \]
+\[ ||v||_{L^2} \le \frac{1}{\sqrt{2}} ||v||_W \]
+\[ |L_F(v)| \le ||F||_{L^2} ||v||_{L^2} \le \frac{1}{\sqrt{2}} ||F||_{L^2} ||v||_W \Rightarrow \]
+\[ \Rightarrow L_F \text{ — непр. функционал, линейный} \]
+
+\noindent\fbox{%
+    \parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+        \textbf{Теорема Рисса:} \(W\) — гильбертово, \(L\) — непр. линейный функционал \(\Rightarrow \exists! u \in W\): \\
+        \(L(v) = \langle u, v \rangle_W, \quad \forall v \in W\)
+    }%
+}
+
+\[ \Rightarrow \forall v \in W \ \exists! u \in W: \int_0^1 u'(x)v'(x) dx = \int_0^1 F(x)v(x) dx \]
+\[ \int_0^1 F(x)v(x) dx = - \int_0^1 u''(x)v(x) dx \]
+\[ \int_0^1 (-u''(x) - F(x))v(x) dx = 0 \Rightarrow F(x) = -u''(x) \]
+
 \end{document}
