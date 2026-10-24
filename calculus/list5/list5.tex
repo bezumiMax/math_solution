@@ -42,4 +42,48 @@
 \[ \Rightarrow f \in \bigcup_{1 \le p < \infty} L^p([0, 1]), \text{ но } f \notin L^{\infty}([0, 1]) \]
 \[ \Rightarrow L^{\infty}([0, 1]) \subset \bigcup_{1 \le p < \infty} L^p([0, 1]) \]
 
+\section*{№4}
+
+\[ \lambda \ll \mu \Leftrightarrow \forall E \in \mathcal{M}: \mu(E) = 0 \Rightarrow \lambda(E) = 0 \]
+\[ \forall E = \bigcup E_i : \mu(E) = 0 \Rightarrow \mu(E_i) = 0 \Rightarrow \lambda(E_i) = 0 \Rightarrow \]
+\[ \Rightarrow |\lambda|(E) = 0 \Rightarrow \text{если } \lambda \ll \mu, \text{ то } |\lambda| \ll \mu. \text{ Пусть } \lambda \ll \mu \]
+
+(!): \(\forall \varepsilon > 0 \ \exists \delta > 0: \mu(E) < \delta \Rightarrow |\lambda|(E) < \varepsilon\)
+
+Пусть \(\exists \varepsilon > 0 \ \forall \delta > 0 \ \exists E \in \mathcal{M}: \mu(E) < \delta, \ |\lambda|(E) \ge \varepsilon\)
+\[ \{E_n\}_{n=1}^{\infty} : \delta = 2^{-n} \Rightarrow \mu(E_n) < 2^{-n}, \ |\lambda|(E_n) \ge \varepsilon \]
+\[ \sum_{n=1}^{\infty} \mu(E_n) < \infty \Rightarrow \mu(\limsup_{n\to\infty} E_n) = 0 \Rightarrow |\lambda|(\limsup_{n\to\infty} E_n) = 0 \]
+\[ |\lambda|(\bigcup_{k \ge n} E_k) \ge |\lambda|(E_n) \ge \varepsilon \]
+\[ |\lambda|(\limsup_{n\to\infty} E_n) = |\lambda|(\bigcap_{n=1}^{\infty} \bigcup_{k \ge n} E_k) = \lim_{n\to\infty} |\lambda|(\bigcup_{k \ge n} E_k) \ge \varepsilon \]
+\text{св-во непрерывности} \(\Rightarrow\) противоречие. \text{(Теорема Бореля-Кантелли)}
+
+2) Пусть \(\mu(E) = 0 \Rightarrow \forall \varepsilon > 0 : \mu(E) < \delta \Rightarrow |\lambda|(E) < \varepsilon \Rightarrow |\lambda|(E) = 0 \Rightarrow \lambda \ll \mu\)
+
+\section*{№5}
+
+\(z_n \in A\); \(|S - z_n| \le |S|\), где \(S = \sum_{n \in A} z_n\)
+
+\[ |S - z_n|^2 \le |S|^2 \]
+\[ |S - z_n|^2 = (S - z_n)(\overline{S - z_n}) = (S - z_n)(\overline{S} + \overline{z_n}) = |S|^2 - 2\operatorname{Re}(S\overline{z_n}) + 1 \le |S|^2 \]
+\text{(здесь предполагается, что } \(|z_n|^2 = 1\)\text{)}
+\[ 2\operatorname{Re}(S\overline{z_n}) - 1 \ge 0 \Rightarrow \operatorname{Re}(S\overline{z_n}) \ge \frac{1}{2} > 0 \]
+\[ u = \frac{S}{|S|}, \ |u| = 1 \Rightarrow \operatorname{Re}(z_n \overline{u}) = \operatorname{Re}(u\overline{z_n}) = \frac{1}{|S|}\operatorname{Re}(S\overline{z_n}) > 0 \]
+\[ \Rightarrow \forall n \in A: \operatorname{Re}(z_n \overline{u}) > 0 \Rightarrow \forall n \in A: \operatorname{sgn}(\operatorname{Re} w_n) \ge 0 \text{ или } \le 0 \]
+
+\section*{№7}
+
+\[ ||v_n - v_m||^2 = \int_0^1 |v_n' - v_m'|^2 dx \to 0, \text{ но фундаментальная} \]
+\[ L^2([0,1]) \text{ — полное } \Rightarrow \exists g \in L^2([0,1]): v_n' \to g \]
+\[ u(x) = \int_0^x g(t) dt; \quad v_n(x) = \int_0^x v_n'(t) dt \]
+\[ v_n(x) \to u(x); \quad u(0) = 0, \ u(1) = 0 \]
+Элементы пополнения: \(u \in L^2([0,1])\), \(u' \in L^2([0,1])\), \(u(0) = u(1) = 0\)
+
+(!): \(||u||_{L^2} \le C ||u||_W\)
+
+Нер-во Коши-Буняковского: \((\int_0^x f(t)g(t) dt)^2 \le (\int_0^x f^2(t) dt)(\int_0^x g^2(t) dt)\)
+
+\[ |v(x)|^2 = |\int_0^x v'(t) \cdot 1 dt|^2 \le (\int_0^x 1^2 dt)(\int_0^x (v'(t))^2 dt) = x \int_0^x (v'(t))^2 dt \le x \int_0^1 (v'(t))^2 dt \]
+\[ \int_0^1 |v(x)|^2 dx \le \left( \int_0^1 (v'(t))^2 dt \right) \left( \int_0^1 x dx \right) = \frac{1}{2} \int_0^1 (v'(t))^2 dt \]
+\[ \Rightarrow ||v||_{L^2}^2 \le \frac{1}{2} ||v'||_{L^2}^2 \]
+
 \end{document}
