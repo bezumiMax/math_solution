@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\begin{document}
+
+\section*{N 1}
+
+\begin{align*}
+U_n(x) U_m(x) &= \frac{\sin((n+1)\varphi) \sin((m+1)\varphi)}{\sin^2 \varphi} = \\
+&= \frac{\cos((n-m)\varphi) - \cos((n+m+2)\varphi)}{2\sin^2 \varphi} \\
+S &= \sum_{j=0}^{n} \cos(r-2j)\varphi ; \quad 2\sin\varphi \cos\alpha = \sin(\alpha+\varphi) - \sin(\alpha-\varphi) \\
+&\Rightarrow 2S\sin\varphi = \sin((r+1)\varphi) - \sin((-r-1)\varphi) = 2\sin((r+1)\varphi) \\
+&\Rightarrow S = \frac{\sin((n+1)\varphi)}{\sin\varphi} \\
+\sum_{k=0}^{m} U_{n+m-2k}(\cos\varphi) &= \frac{1}{\sin\varphi} \sum_{k=0}^{m} \sin((n+m-2k+1)\varphi) \\
+\sum_{k=0}^{m} \sin((n+m-2k+1)\varphi) &= \left| 2\sin\varphi\sin\alpha = \cos(\alpha-\varphi) - \cos(\alpha+\varphi) \right| \\
+&= \frac{1}{2\sin\varphi} (\cos((n-m)\varphi) - \cos((n+m+2)\varphi)) = \\
+&= \frac{\sin((m+1)\varphi)\sin((n+1)\varphi)}{\sin\varphi} \\
+\Rightarrow \sum_{k=0}^{m} U_{n+m-2k}(\cos\varphi) &= \frac{\sin((m+1)\varphi)\sin((n+1)\varphi)}{\sin^2\varphi} = U_m(x)U_n(x)
+\end{align*}
+
+\vspace{1cm}
+
+\section*{N 2}
+
+\begin{align*}
+&\forall x, y \in H : \langle T x, y \rangle = \langle x, T^* y \rangle, \text{ где } T^* \text{ -- сопряженный оператор} \\
+&\text{а) } H = \ell^2, \quad T(x_1, \dots) = (0, x_1, x_2, \dots) \\
+&\langle T x, y \rangle = \langle (0, x_1, x_2, \dots), (y_1, y_2, \dots) \rangle = \sum_{n=1}^{\infty} x_n \overline{y_{n+1}} = \\
+&= \langle x, (y_2, y_3, \dots) \rangle \Rightarrow T^* (y_1, y_2, \dots) = (y_2, y_3, \dots) \\
+&\text{б) } H = L^2([0, 1], dx), \quad T(f)(x) = \int_{0}^{x} f(t) dt \\
+&f, g \in H \Rightarrow \langle T f, g \rangle = \int_{0}^{1} \left( \int_{0}^{x} f(t) dt \right) \overline{g(x)} dx = \int_{0}^{1} f(t) \left( \int_{t}^{1} \overline{g(x)} dx \right) \\
+&dt = \int_{0}^{1} f(t) \left( \overline{\int_{t}^{1} g(x) dx} \right) dt = \left\langle f, t \mapsto \int_{t}^{1} g(x) dx \right\rangle \Rightarrow \\
+&\Rightarrow (T^* g)(x) = \int_{x}^{1} g(t) dt
+\end{align*}
+
+\end{document}
